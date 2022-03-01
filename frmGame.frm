@@ -11,6 +11,7 @@ Begin VB.Form frmGame
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton cmdEndGame 
       Caption         =   "End game"
+      Enabled         =   0   'False
       Height          =   495
       Left            =   480
       TabIndex        =   9
@@ -116,10 +117,15 @@ Private Sub cmdStartGame_Click()
         Exit Sub
     End If
     
-    cmdEndGame.Enabled = mScoreBoard.StartMatch(txtHomeTeam.Text, txtAwayTeam.Text, Now)
+    If mScoreBoard.StartMatch(txtHomeTeam.Text, txtAwayTeam.Text, Now) Then
+        cmdEndGame.Enabled = True
+        txtHomeTeamScore.Text = 0
+        txtAwayTeamScore.Text = 0
+    End If
 End Sub
 
 Private Sub Form_Load()
+    cmdEndGame.Enabled = False
     Me.Show
 End Sub
 
