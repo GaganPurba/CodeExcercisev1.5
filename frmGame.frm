@@ -99,14 +99,15 @@ Private Sub cmdEndGame_Click()
         Exit Sub
     End If
     
-    If Not (IsNumeric(txtHomeTeamScore.Text) Or IsNumeric(txtAwayTeamScore.Text)) Then
+    If Not (IsNumeric(txtHomeTeamScore.Text) And IsNumeric(txtAwayTeamScore.Text)) Then
         MsgBox "Please provide Team Scores as numeric values", vbOKOnly
         Exit Sub
     End If
     
-    If mScoreBoard.EndMatch(txtHomeTeam.Text, txtHomeTeamScore.Text, txtAwayTeam.Text, txtAwayTeamScore.Text, Now) Then
-        Me.Hide
-    End If
+    mScoreBoard.EndMatch txtHomeTeam.Text, txtHomeTeamScore.Text, txtAwayTeam.Text, txtAwayTeamScore.Text, Now
+        
+    Me.Hide
+    Unload Me
 End Sub
 
 Private Sub cmdStartGame_Click()

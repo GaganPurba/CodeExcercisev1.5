@@ -30,7 +30,7 @@ Public Function StartMatch(ByVal HomeTeam As String, ByVal AwayTeam As String, B
     StartMatch = True
 End Function
 
-Public Function EndMatch(ByVal HomeTeam As String, ByVal HomeTeamScore As Integer, ByVal AwayTeam As String, ByVal AwayTeamScore As Integer, ByVal EndTime As Date) As Boolean
+Public Sub EndMatch(ByVal HomeTeam As String, ByVal HomeTeamScore As Integer, ByVal AwayTeam As String, ByVal AwayTeamScore As Integer, ByVal EndTime As Date)
     On Error Resume Next
     
     Dim xMatch As ClMatchInfo
@@ -39,5 +39,5 @@ Public Function EndMatch(ByVal HomeTeam As String, ByVal HomeTeamScore As Intege
     xMatch.mAwayTeamScore = AwayTeamScore
     xMatch.mEndTime = EndTime
     
-    EndMatch = True
-End Function
+    'EndMatch = True
+End Sub

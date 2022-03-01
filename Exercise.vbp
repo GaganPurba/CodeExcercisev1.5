@@ -5,6 +5,7 @@ Form=frmGame.frm
 Class=ClMatchInfo; ClTeamInfo.cls
 Module=modExcercise; modExcercise.bas
 Class=ClScoreBoard; ClScoreBoard.cls
+Form=frmScoreBoard.frm
 IconForm="frmStartForm"
 Startup="frmStartForm"
 Command32=""
