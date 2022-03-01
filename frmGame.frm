@@ -94,6 +94,16 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Private Sub cmdEndGame_Click()
+    If txtHomeTeam.Text = "" Or txtAwayTeam.Text = "" Then
+        MsgBox "Please provide Team names", vbOKOnly
+        Exit Sub
+    End If
+    
+    If Not (IsNumeric(txtHomeTeamScore.Text) Or IsNumeric(txtAwayTeamScore.Text)) Then
+        MsgBox "Please provide Team Scores as numeric values", vbOKOnly
+        Exit Sub
+    End If
+    
     If mScoreBoard.EndMatch(txtHomeTeam.Text, txtHomeTeamScore.Text, txtAwayTeam.Text, txtAwayTeamScore.Text, Now) Then
         Me.Hide
     End If
